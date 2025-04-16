@@ -1,0 +1,117 @@
+
+//change the stuff a little, write the chnages and run the command, | killall waybar |, then | waybar& | to restart waybar and observe what happens
+//this is mostly for the structure of the waybar, colors are in the other file called style.css
+
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 30,
+  "width": 1900,
+  "margin-bottom": 0,
+  "spacing": 0,
+  "fixed-center": true,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-right": [
+    "memory",
+    "cpu",
+    "disk",
+    "pulseaudio",
+    "tray"
+  ],
+  "modules-center": ["clock","hyprland/window"],
+  "image#sprite1": {
+    "path": "~/.config/waybar/Rectangle1.svg",
+    "size": 30
+  },
+
+  "custom/logo": {
+    "format": "O "
+  },
+  "hyprland/workspaces": {  //top left desktop thingy, you can change it from japanese to whatever you want
+    "on-click": "activate",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "format": "{icon}",
+	  "format-icons": {
+		  "1": "一",
+		  "2": "二",
+		  "3": "三",
+		  "4": "四",
+		  "5": "五",
+		  "6": "六",
+		  "7": "七",
+		  "8": "八",
+		  "9": "九",
+       	    "10": "〇"
+    },
+  },
+  "hyprland/window": {
+    "format": " {}",
+    "separate-outputs": false,
+    "max-length": 50
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 4,
+    "show-passive-items": false,
+    "max-length": 6,
+    "min-length": 6
+  },
+  "clock": {       
+    "tooltip": true,
+    "tooltip-format": "{: %A, %B %e %Y}",
+    "interval": 60,
+    "format": "   {:%I:%M %p}", //You can search how html time formats work and then change this to make it 34 hr or show the date etc
+    "max-length": 25
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "{icon0}{icon1}{icon2}{icon3}",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "kitty --class system_monitor -e htop -d 5",  //install htop using pacman to make this work
+    "max-length": 25,
+    "min-length": 6
+  },
+  "memory": {
+    "format": "   {percentage}%",
+    "interval": 1,
+    "on-click": "kitty --class system_monitor -e htop",  //install htop using pacman to make this work
+    "max-length": 20,
+    "min-length": 6
+  },
+  "disk": {
+    "interval": 30,
+    "format": "󰋊 {percentage_used}%",
+    "tooltip": true,
+    "tooltip-format": "HDD - {used} used out of {total}  ({percentage_used}%)",
+    "on-click": "kitty --class system_monitor -e ncdu --color dark"
+  },
+
+  "pulseaudio": {
+    "format": "󰕾  {volume}%",
+    "scroll-step": 1,
+    "on-click-right": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"],
+    "max-length": 25,
+    "exec": "pactl --format=json list sinks | jq -cM --unbuffered \"map(select(.name == \\\"$(pactl get-default-sink)\\\"))[0].properties | [.\\\"media.name\\\",.\\\"alsa.name\\\",.\\\"node.nick\\\",.\\\"alsa.long_card_name\\\"] | map(select(length>0))[0] | {text:.}\"",
+    "exec-if": "sleep 0.1", // Give enough time for `pactl get-default-sink` to update
+    "on-click": "pactl --format=json list sinks short | jq -cM --unbuffered \"[.[].name] | .[((index(\\\"$(pactl get-default-sink)\\\")+1)%length)]\" | xargs pactl set-default-sink"
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "Papirus",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["Alacritty", "kitty"],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    }
+  }
+}
