@@ -1,0 +1,173 @@
+//This has all the colors and stuff, fiddle around with them to see how stuff changes 
+//and then run | killall waybar |, then | waybar& | to restart waybar and see the changes.
+
+* {
+  font-family: CaskaydiaCoveNF-Regular;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 0px;
+  margin: 0px;
+}
+
+window#waybar {
+  background-color: transparent;
+  border-radius: 10px;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+.modules-right {
+  font-size: 10px;
+  background-color: rgba(90, 90, 90, 0.3);
+  border-radius: 7px;
+  padding: 0px;
+  margin: 5px 0px 2px 0px;
+}
+
+.modules-left {
+  margin-left: 0.1rem;
+  background-color: rgba(90, 90, 90, 0.3);
+  margin-top: 7px;
+  margin-bottom: 2px;
+  padding: 1px 0px;
+  border-radius: 10px;
+}
+
+.modules-center {
+  background-color: transparent;
+  padding: 0px;
+  margin: 5 0 2 0;
+  border-radius: 7px;
+}
+
+tooltip {
+  background: rgba(50, 50, 50, 0.9);
+  border-radius: 10px;
+}
+
+tooltip label {
+  color: #ecbefa;
+  background-color: rgba(50, 50, 50, 0.9);
+  border-radius: 10px;
+}
+
+tooltip * {
+  border-radius: 10px;
+}
+
+#workspaces {
+  margin: 1px;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+}
+
+#workspaces button {
+  margin: 0;
+  color: #ebdbb2;
+  font-weight: bolder;
+  font-style: normal;
+  margin: 0.2rem 0.1rem;
+  border-radius: 20px;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background-color: #3A6F65;
+  color: #ebdbb2;
+  border-radius: 10px;
+}
+
+#workspaces button.active {
+  color: #ebdbb2;
+  background-color: #3A6F65;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.818);
+  transition: all 0.1s ease-in-out;
+  border-radius: 20px;
+}
+
+#workspaces button.urgent {
+  background-color: #00e5ff;
+  color: black;
+}
+
+#clock,
+#custom-logo {
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  color: #d5a6ff;
+  background-color: rgba(90, 90, 90, 0.3);
+}
+
+#clock {
+  padding: 10 5 10 1.0em;
+  border-radius: 10 0 0 10;
+}
+
+#custom-logo {
+  padding-left: 1rem;
+  padding-bottom: 0.3rem;
+  padding-right: 0.5rem;
+  color: #D6625D;
+  border-radius: 0 10 10 0;
+}
+
+#custom-show_taskbar {
+  padding-left: 1rem;
+}
+
+#memory {
+  color: #596b99;
+  padding: 0 0.3em 0 0.5em;
+  border-radius: 10 0 0 10;
+}
+
+#pulseaudio {
+  margin: 0;
+  padding: 0 0.5em 0 0.4em;
+  color: #4fb3a0;
+}
+
+#cpu {
+  margin: 1;
+  padding: 0 0.5em 0 0em;
+  color: #596b99;
+}
+
+#custom-cycle_wall {
+  margin: 0;
+  padding: 0 0.5em;
+  color: #d3869b;
+}
+
+#language {
+  margin: 0;
+  padding: 0 0.1em;
+  color: #d3869b;
+}
+
+#tray {
+  margin: 0;
+  padding-right: 10px;
+  color: #d3869b;
+  border-radius: 0 10 10 0;
+}
+
+#disk {
+  margin: 0;
+  padding: 0 0.1em 0 0.1em;
+  color: #596b99;
+}
+
+#window {
+  color: #ebdbb2;
+  margin-left: 0rem;
+  margin-right: 1rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.818);
+  transition: all 0.1s ease-in-out;
+  border-radius: 0px;
+  font-size: 15px;
+  background-color: rgba(90, 90, 90, 0.3);
+  padding: 0 0.8em;
+  border-radius: 0 10 10 0;
+}
