@@ -1,16 +1,21 @@
 I use EndeavourOS, btw (Arch basically)
 
+
+#### Dotfiles
+
 Very easy to understand hyprland configuration for noobs (like me)
 Everything is explained
 
-OS: take a guess
-VM: Hyprland
-Wallpaper: Hyprpaper - https://github.com/dharmx/walls/blob/main/anime/a_log_cabin_in_the_woods.png
-Bar: Waybar
-Terminal: kitty
 
+**OS:** take a guess
+**VM:** Hyprland
+**Wallpaper:** Hyprpaper - https://github.com/dharmx/walls/blob/main/anime/a_log_cabin_in_the_woods.png
+**Bar:** Waybar
+**Terminal:** kitty
+**Application launcher:** rofi
 
-TUTORIAL!!!
+###### TUTORIAL!!!
+
 Download command:
 ```
 cd ~ 
@@ -34,4 +39,4 @@ cp ~/Dotfiles/waybar/style.css ~/.config/waybar
 Read the hyprland config file (near line 210) first so you can set your preferred keybinds.
 You can change the colors and other properties in the files with the help of the comments.
 
-Have fun, keep ricing!
+###### Have fun, keep ricing!
