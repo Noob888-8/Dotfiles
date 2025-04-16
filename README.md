@@ -1,7 +1,7 @@
 I use EndeavourOS, btw (Arch basically)
 
 
-#### Dotfiles
+## Dotfiles
 
 Very easy to understand hyprland configuration for noobs (like me)
 Everything is explained
@@ -14,7 +14,7 @@ Everything is explained
 **Terminal:** kitty
 **Application launcher:** rofi
 
-###### TUTORIAL!!!
+#### TUTORIAL!!!
 
 Download command:
 ```
@@ -39,4 +39,4 @@ cp ~/Dotfiles/waybar/style.css ~/.config/waybar
 Read the hyprland config file (near line 210) first so you can set your preferred keybinds.
 You can change the colors and other properties in the files with the help of the comments.
 
-###### Have fun, keep ricing!
+##### Have fun, keep ricing!
